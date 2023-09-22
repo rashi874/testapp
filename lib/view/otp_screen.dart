@@ -14,14 +14,14 @@ class OTPVerificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<LoginProviders>(builder: (context, values, _) {
-      return SafeArea(
-        child: Scaffold(
-          extendBody: true,
-          backgroundColor: Appcolors.kwhite,
-          body: Builder(builder: (context) {
-            // Retrieve screen width and height using MediaQuery
-            double screenHeight = MediaQuery.of(context).size.height;
-            return ListView(
+      return Scaffold(
+        extendBody: true,
+        backgroundColor: Appcolors.kwhite,
+        body: Builder(builder: (context) {
+          // Retrieve screen width and height using MediaQuery
+          double screenHeight = MediaQuery.of(context).size.height;
+          return SafeArea(
+            child: ListView(
               physics: const BouncingScrollPhysics(),
               children: [
                 Appsizes.kh50,
@@ -85,9 +85,9 @@ class OTPVerificationPage extends StatelessWidget {
                 Appsizes.kh40,
                 const BottomText()
               ],
-            );
-          }),
-        ),
+            ),
+          );
+        }),
       );
     });
   }
